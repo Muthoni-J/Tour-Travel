@@ -64,17 +64,17 @@ class NetBanking(models.Model):
     Balance = models.CharField(max_length=9)
 
 
-class Transactions(models.Model):
-    Transactions_ID = models.AutoField(primary_key=True)
-    username = models.CharField(max_length=10)
-    Trip_same_id = models.IntegerField(default=1)
-    Amount = models.CharField(max_length=8)
-    Status = models.CharField(default="Failed", max_length=15)
-    Payment_method = models.CharField(blank=True, max_length=15)
-    Date_Time = models.DateTimeField(default=timezone.now)
-    amount = models.IntegerField()
-    transaction_type = models.CharField(max_length=15,null=True)
-    transaction_charge = models.CharField(max_length=5,null=True)
-    transaction_cost = models.PositiveIntegerField()
-    status = models.CharField(max_length=15,null=True)
+# class Transactions(models.Model):
+#     Transactions_ID = models.AutoField(primary_key=True)
+#     username = models.CharField(max_length=10)
+#     Trip_same_id = models.IntegerField(default=1)
+#     Amount = models.CharField(max_length=8)
+#     Status = models.CharField(default="Failed", max_length=15)
+#     Payment_method = models.CharField(blank=True, max_length=15)
+#     Date_Time = models.DateTimeField(default=timezone.now)
+#     amount = models.IntegerField()
+#     transaction_type = models.CharField(max_length=15,null=True)
+#     transaction_charge = models.CharField(max_length=5,null=True)
+#     transaction_cost = models.PositiveIntegerField()
+#     status = models.CharField(max_length=15,null=True)
     

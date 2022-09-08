@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Destination,Detailed_desc, agent_detail,customer_detail,Cards,NetBanking,Transactions
+from .models import Destination,Detailed_desc, agent_detail,customer_detail,Cards,NetBanking
 # Register your models here.
 
 class DestinationAdmin(admin.ModelAdmin):
@@ -22,25 +22,23 @@ class Agent_detailAdmin(admin.ModelAdmin):
     search_fields = ("first_name","last_name",) 
 admin.site.register(agent_detail,Agent_detailAdmin)
 
-class TransactionsAdmin(admin.ModelAdmin):
-    list_display = ("amount","transaction_type","transaction_charge","transaction_cost","status")
-    search_fields = ("amount","transaction_type",)
-admin.site.register(Transactions,TransactionsAdmin)
+# class TransactionsAdmin(admin.ModelAdmin):
+#     list_display = ("amount","transaction_type","transaction_charge","transaction_cost","status")
+#     search_fields = ("amount","transaction_type",)
+# admin.site.register(Transactions,TransactionsAdmin)
 
-# class CardSAdmin(admin.ModelAdmin):
-#     list_display = ("signature","date_issued","card_status","CVV_security_code","account")
-#     search_fields = ("signature","date_issued",)
-# admin.site.register(Cards,CardSAdmin)
+class CardsAdmin(admin.ModelAdmin):
+    list_display = ("Card_number","email","Ex_Year","CVV","Ex_Year")
+    search_fields = ("Card_number","email",)
+admin.site.register(Cards,CardsAdmin)
 
-# class ThirdpartyAdmin(admin.ModelAdmin):
-#     list_display = ("email","phone_number","is_active","currency","transaction_cost","account")
-#     search_fields = ("email","phone_number",)
-# admin.site.register(Thirdparty,ThirdpartyAdmin)
+class NetBankingAdmin(admin.ModelAdmin):
+    list_display = ("Username","Password")
+    search_fields = ("Username","Password",)
+admin.site.register(NetBanking,NetBankingAdmin)
 
-# class NotificationAdmin(admin.ModelAdmin):
-#     list_display = ("message","data_created","image","receipt","is_active")
-#     search_fields = ("message","data_created",)
-# admin.site.register(Notification,NotificationAdmin)
+
+
 
 
 
